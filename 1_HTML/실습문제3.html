@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제3</title>
+    <style>
+      form {
+        width: 450px;
+      }
+      textarea {
+        width: 200px;
+        height: 150px;
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>주문하기</h1>
+    <!--
+        name : 서버에 보낼 때 담을 공간명
+        value : 서버에 보낼 때 name 공간에 담을 값
+        
+        id : 태그의 고유 명칭 부여
+        for : input의 id와 연결
+    -->
+    <form action="" method="get">
+      <label>고객명 : <input type="text" name="name" /></label> <br /><br />
+      <label>전화번호 : <input type="text" name="phone" /></label><br /><br />
+      <label>E-mail : <input type="text" name="email" /></label> <br /><br />
+
+      <fieldset>
+        <legend>피자 사이즈</legend>
+        <label><input type="radio" name="size" value="small" /> Small</label>
+        <br /><br />
+        <label><input type="radio" name="size" value="medium" /> Medium</label>
+        <br /><br />
+        <label><input type="radio" name="size" value="large" /> Large</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>토핑 선택</legend>
+        <!--
+            (input:checkbox[name="topping"]+label)*4
+            ==
+            <input type="checkbox" name="topping" id=""/> <label for=""></label>
+            <input type="checkbox" name="topping" id=""/> <label for=""></label>
+            <input type="checkbox" name="topping" id=""/> <label for=""></label>
+            <input type="checkbox" name="topping" id=""/> <label for=""></label>
+        -->
+        <label>
+          <input type="checkbox" name="topping" value="bacon" /> 베이컨
+        </label>
+        <label>
+          <input type="checkbox" name="topping" value="cheeze" /> 치즈
+        </label>
+        <label>
+          <input type="checkbox" name="topping" value="onion" /> 양파
+        </label>
+        <label>
+          <input type="checkbox" name="topping" value="mushroom" /> 버섯
+        </label>
+      </fieldset>
+      <br />
+
+      <div>
+        희망 배송 시간 :
+        <input type="time" name="time" />
+      </div>
+      <br />
+
+      <div>
+        배송 시 요청사항 :
+        <textarea name="memo" placeholder="내용을 입력하세요"></textarea>
+        <button type="submit">주문하기</button>
+      </div>
+    </form>
+  </body>
+</html>
