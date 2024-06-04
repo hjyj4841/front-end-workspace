@@ -1,0 +1,91 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: indianred;
+  background: linear-gradient(purple, pink);
+  font-family: "맑은 고딕";
+  height: 100vh;
+  padding: 20px;
+}
+
+.profile-card {
+  /* 위치 & 사이즈 조절 */
+
+  /* position 사용 시
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  */
+
+  margin: auto; /* margin: auto == 양쪽 margin을 균등하게 분배 */
+  width: 280px;
+  /* 테두리 관련 */
+  border: 1px solid white;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+/* img 관련 */
+/* background-image 사용 시 */
+.profile-image {
+  /* 위치 & 사이즈 조절 */
+  margin: 20px auto;
+
+  /* 이미지 관련*/
+  background-image: url(../../resources/bao.jpg);
+  border-radius: 50%;
+  background-size: cover; /* 이미지 사이즈 상하 or 좌우로 맞춤 */
+  background-position: center; /* 이미지 가운데 정렬 */
+}
+
+/* img 태그 사용할 시 */
+.profile-card > img {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+
+  /* object-fit: cover == background-size: cover */
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* 이미지 아래 글귀 */
+.profile-card > p {
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 링크 관련 */
+.profile-card > a {
+  /* 위치 & 사이즈 조절 */
+  display: block; /* a 태그의 기본값은 inline 이기 때문에 block으로 변환 */
+  margin: 10px;
+  padding: 20px;
+  /*
+  height: 50px;
+  line-height: 50px;
+  */
+
+  /* 테두리 */
+  border: 1px solid white;
+  border-radius: 5px;
+
+  /* font 관련 */
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+/* 마우스 hover 시 발생 이벤트 */
+.profile-card > a:hover {
+  color: black;
+  background-color: white;
+}

@@ -1,0 +1,60 @@
+.container {
+  background: lightgrey;
+  height: 100vh; /* 디스플레이 크기 맞춤 */
+
+  /* 1. flex */
+  display: flex;
+
+  /* 2. flex-direction : 배치 방법 (행/열) */
+  flex-direction: column;
+  flex-direction: row;
+
+  /* 3. flex-wrap : 줄바꿈 */
+  flex-wrap: wrap-reverse;
+  flex-wrap: nowrap;
+
+  /* 4. justify-content : 메인축 방향 정렬 (flex-direction이 주축) */
+  justify-content: center;
+  justify-content: space-evenly;
+  justify-content: flex-start;
+
+  /* 5. align-items */
+  align-items: flex-start;
+  align-items: center;
+  align-items: stretch;
+
+  /* 6. align-content */
+  align-content: space-around;
+}
+.item {
+  background-color: white;
+  border: 3px solid black;
+  padding: 1rem;
+
+  /* 1. flex-basis */
+  flex-basis: auto;
+  flex: 1;
+}
+
+.item:nth-child(1) {
+  /* flex-grow: 1; */
+  align-self: flex-start;
+}
+.item:nth-child(2) {
+  /* flex-grow: 2; */
+  align-self: center;
+}
+.item:nth-child(3) {
+  /* flex-grow: 1; */
+  align-self: flex-end;
+  order: 1;
+}
+.item:nth-child(4) {
+  /* flex-grow: 3; */
+  order: 2;
+}
+
+.item img {
+  width: 95px;
+  height: 95px;
+}
