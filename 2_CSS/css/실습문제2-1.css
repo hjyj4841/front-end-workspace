@@ -1,0 +1,88 @@
+* {
+  font-family: "맑은 고딕";
+}
+/* header 스타일 */
+header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > * {
+  width: 33.33%;
+  display: flex;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 15px;
+}
+header form {
+  justify-content: center;
+}
+
+header nav {
+  height: 100%;
+  justify-content: flex-end;
+}
+header nav a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+header nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* section 스타일*/
+section {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+#section1 {
+  background-color: red;
+}
+#section2 {
+  background-color: purple;
+}
+#section3 {
+  background-color: yellow;
+}
+section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+section p {
+  line-height: 1.5;
+}
+
+/* top 아이콘 */
+.top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
