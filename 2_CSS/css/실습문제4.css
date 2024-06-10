@@ -1,22 +1,26 @@
 body {
-  background: linear-gradient(to top right, black, blue);
+  background: linear-gradient(to top right /* 45deg */, black, blue);
   height: 100vh;
-}
-
-.container {
-  height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.container {
+  /* height: 100%; */
+
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
 .square {
-  width: 5px;
-  height: 35px;
+  width: 10px;
+  height: 50px;
   background-color: white;
   margin: 3px;
   border-radius: 10px;
-  animation: wave 0.5s linear infinite alternate;
+  animation: wave /* 0.5s */ 1s linear infinite /* alternate */;
 }
 /* 
 .square:nth-child(1),
@@ -36,12 +40,23 @@ animation: wave 0.5s linear infinite alternate;
   animation-delay: 0.3s;
 }
 
-@keyframes wave {
+/* @keyframes wave {
   from {
     transform: scaleY(1);
   }
   to {
     transform: scaleY(2);
-    background-color: orange;
+  }
+} */
+
+@keyframes wave {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.8);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
