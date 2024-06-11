@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제4</title>
+  </head>
+  <body>
+    <!-- Q1. 100 ~ 200 정수 중 5의 배수가 아닌 수를 출력하세요 -->
+    <script>
+      console.log("-----------------------1번 문제--------------------");
+      for (let i = 100; i <= 200; i++) {
+        if (i % 5 != 0) {
+          console.log(i);
+        }
+      }
+    </script>
+
+    <!-- Q2. 1 ~ 1000 정수 중 3의 배수의 합계를 출력하세요 -->
+    <script>
+      console.log("-----------------------2번 문제--------------------");
+      let sum = 0;
+
+      for (let i = 0; i <= 1000; i++) {
+        if (i % 3 === 0) {
+          sum += i;
+        }
+      }
+      console.log(sum);
+    </script>
+
+    <!-- Q3. 문자열의 문자들을 하나씩 출력하세요 -->
+    <script>
+      console.log("-----------------------3번 문제--------------------");
+      const str = "안녕하세요. 반갑습니다!";
+
+      const strArr = str.split("");
+
+      for (let i = 0; i < strArr.length; i++) {
+        console.log(strArr[i]);
+      }
+    </script>
+
+    <!-- Q4. 배열 값 중 최대값을 출력하세요 -->
+    <script>
+      console.log("-----------------------4번 문제--------------------");
+      const nums = [3, 7, 12, 5, 3];
+      let maxNum = 0;
+
+      for (let i = 0; i < nums.length; i++) {
+        if (maxNum <= nums[i]) {
+          maxNum = nums[i];
+        }
+      }
+      console.log(maxNum);
+    </script>
+
+    <!-- Q5. 1 ~ 10 정수 중 소수(1과 자기자신)를 출력하세요
+              2, 3, 5, 7
+    -->
+    <script>
+      console.log("-----------------------5번 문제 --------------------");
+      // let exNo = 0;
+
+      // for (let i = 2; i <= 10; i++) {
+      //   for (let j = 2; j <= i; j++) {
+      //     if (i % j === 0) {
+      //       exNo++;
+      //     }
+      //   }
+      //   if (exNo == 1) {
+      //     console.log(i);
+      //   }
+      //   exNo = 0;
+      // }
+
+      for (let i = 2; i <= 10; i++) {
+        for (let j = 2; j <= i; j++) {
+          if (i % j === 0) {
+            if (i != j) {
+              break;
+            }
+            console.log(i);
+          }
+        }
+      }
+    </script>
+
+    <!-- Q6. 배열 안의 데이터를 모두 2배로 만들어서 출력하세요 -->
+    <script>
+      console.log("-----------------------6번 문제--------------------");
+      const nums2 = [1, 3, 5];
+
+      const newNums2 = nums2.map((value) => {
+        return value * 2;
+      });
+
+      console.log(newNums2);
+    </script>
+
+    <!-- Q7. 배열에 있는 데이터들로 합계와 평균을 출력하세요 -->
+    <script>
+      console.log("-----------------------7번 문제--------------------");
+      const nums3 = [90, 85, 70, 86, 97];
+
+      const sum3 = nums3.reduce((acc, value) => {
+        return acc + value;
+      });
+
+      const avg3 = sum3 / nums3.length;
+
+      console.log(`합계: ${sum3}, 평균: ${avg3}`);
+    </script>
+
+    <!-- Q8. 두 배열의 각 데이터의 곱셈을 한 데이터들로 이루어진 새로운 배열을 생성하여 출력하세요 -->
+    <script>
+      console.log("-----------------------8번 문제--------------------");
+
+      const a1 = [12, 0, 2, 5, 4];
+      const b1 = [5, 15, 6, 7, 8];
+      let c1 = [];
+
+      for (let i = 0; i < a1.length; i++) {
+        c1.push(a1[i] * b1[i]);
+      }
+      console.log(c1);
+    </script>
+
+    <!-- Q9. 두 배열의 데이터 값이 서로 같은 데이터들만 이루어진 새로운 배열을 생성하여 출력하세요
+            배열.includes(데이터) : 해당 데이터가 배열에 있으면 true, 없으면 false
+    -->
+    <script>
+      console.log("-----------------------9번 문제--------------------");
+      const a2 = [12, 0, 2, 5, 4];
+      const b2 = [0, 2, 3, 12, 8];
+      const c2 = [];
+
+      // a2.includes(12) == true
+      for (let i = 0; i < a2.length; i++) {
+        if (b2.includes(a2[i])) {
+          c2.push(a2[i]);
+        }
+      }
+
+      console.log(c2);
+    </script>
+
+    <!-- Q10. 2차원 배열에는 3명의 학생의 4과목 성적이 들어 있습니다. 각 학생들의 합계와 평균을 출력하세요 -->
+    <script>
+      console.log("-----------------------10번 문제--------------------");
+      const scores = [
+        [83, 90, 70, 87],
+        [87, 93, 62, 83],
+        [98, 90, 77, 97],
+      ];
+      let stuSum = 0;
+      let stuAvg;
+
+      for (let i = 0; i < scores.length; i++) {
+        for (let j = 0; j < scores[i].length; j++) {
+          stuSum += scores[i][j];
+        }
+        stuAvg = stuSum / scores[i].length;
+        console.log(`${i + 1}번 학생 점수의 합계: ${stuSum}, 평균: ${stuAvg}`);
+        stuSum = 0;
+      }
+    </script>
+  </body>
+</html>

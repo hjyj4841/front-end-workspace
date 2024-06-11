@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>실습문제1</title>
   </head>
   <body>
     <!-- 
@@ -21,7 +21,7 @@
            예) 킬로그램 : 60  
      -->
     <script>
-      let kg = 60;
+      const kg = 60;
       const lb = kg * 2.2;
 
       console.log(`킬로그램 = ${kg}, 파운드 = ${lb}`);
@@ -33,7 +33,7 @@
            예) 제곱미터 : 99
     -->
     <script>
-      let meter = 99;
+      const meter = 99;
       const pyeong = meter * 0.3;
 
       console.log(`제곱미터 = ${meter}, 평 = ${pyeong}`);
@@ -45,9 +45,9 @@
            예) 윗변 : 10, 밑변 : 14, 높이 : 4
      -->
     <script>
-      let topWidth = 10;
-      let bottomWidth = 14;
-      let height = 4;
+      const topWidth = 10;
+      const bottomWidth = 14;
+      const height = 4;
       const area = ((topWidth + bottomWidth) / 2) * height;
 
       console.log(`윗변 : ${topWidth}, 밑변 : ${bottomWidth}, 높이 : ${height}, 넓이 : ${area}`);
@@ -59,7 +59,7 @@
            - 예) 정기 예금액 : 12,000,000
     -->
     <script>
-      let bankMoney = 12000000;
+      const bankMoney = 12000000;
       const interest = (bankMoney * 0.04) / 12;
 
       console.log(`정기 예금액 : ${bankMoney}, 월 이자 : ${interest}`);
@@ -69,8 +69,9 @@
         Q5. 머쓱이는 55살인 선생님이 몇 년도에 태어났는지 궁금해졌다. 나이 age가 주어질 때, 2024년을 기준 출생 연도를 console에 출력하시오.
      -->
     <script>
-      let age = 55;
+      const age = 55;
       const birth_year = 2024 - age + 1;
+      // const birth_year = 2024 - age;  만 나이 기준
 
       console.log(`나이는 ${age}세 이며, 출생연도는 ${birth_year}년 입니다.`);
     </script>
@@ -80,8 +81,8 @@
             머쓱이가 가지고 있는 돈이 15,000원 일 때, 머쓱이가 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 console에 출력하시오.
      -->
     <script>
-      let msMoney = 15000;
-      let americanoValue = 5500;
+      const msMoney = 15000;
+      const americanoValue = 5500;
       const msDrinkCoffe = parseInt(msMoney / americanoValue);
       const changeMoney = msMoney % americanoValue;
 
@@ -93,23 +94,17 @@
           양꼬치 64인분과 음료수 6개를 먹었다면 총얼마를 지불해야 하는지 console에 출력하시오.
      -->
     <script>
-      let eatLamb = 64;
-      let drink = 6;
+      const eatLamb = 64;
+      const drink = 6;
 
       const lambValue = 12000;
       const drinkValue = 2000;
 
-      const totalValue = eatLamb * lambValue + drink * drinkValue;
-      const serviceDrink = parseInt(eatLamb / drink);
+      const serviceDrink = parseInt(eatLamb / 10);
 
-      // const result = ServiceDrink >= drink ? totalValue - drink * drinkValue : totalValue - serviceDrink * drinkValue;
-      // console.log(`가격은 ${result}원 입니다.`);
+      const total = eatLamb * lambValue + (drink-serviceDrink) * drinkValue;
 
-      if (serviceDrink >= drink) {
-        console.log(`가격은 ${totalValue - drink * drinkValue}원 입니다.`);
-      } else {
-        console.log(`가격은 ${totalValue - serviceDrink * drinkValue}원 입니다.`);
-      }
+      console.log(`가격은 ${total}원 입니다.`);
     </script>
   </body>
 </html>
