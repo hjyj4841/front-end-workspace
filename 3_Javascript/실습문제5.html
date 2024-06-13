@@ -234,37 +234,29 @@
 
     <script>
       function addStudent() {
-        let name = [];
-        let age = [];
-        let addr = [];
+        // let name = [];
+        // let age = [];
+        // let addr = [];
         let stu = [];
-        const searchTB = document.querySelectorAll("#memberInfo td");
+        const searchName = document.querySelectorAll(".name");
+        const searchAge = document.querySelectorAll(".age");
+        const searchAddr = document.querySelectorAll(".addr");
+
         function Student(name, age, addr) {
           this.name = name;
           this.age = age;
           this.addr = addr;
-          this.addTable = function (checkNum) {
-            if (checkNum == 0) {
-              searchTB[0].innerHTML = this.name;
-              searchTB[1].innerHTML = this.age;
-              searchTB[2].innerHTML = this.addr;
-            } else if (checkNum == 1) {
-              searchTB[3].innerHTML = this.name;
-              searchTB[4].innerHTML = this.age;
-              searchTB[5].innerHTML = this.addr;
-            } else {
-              searchTB[6].innerHTML = this.name;
-              searchTB[7].innerHTML = this.age;
-              searchTB[8].innerHTML = this.addr;
-            }
-          };
         }
         for (let i = 0; i < 3; i++) {
-          name[i] = prompt(`${i + 1}번째 학생의 이름을 입력하세요.`);
-          age[i] = prompt(`${i + 1}번째 학생의 나이를 입력하세요.`);
-          addr[i] = prompt(`${i + 1}번째 학생의 주소를 입력하세요.`);
-          stu[i] = new Student(name[i], age[i], addr[i]);
-          stu[i].addTable(i);
+          const name = prompt(`${i + 1}번째 학생의 이름을 입력하세요.`);
+          const age = prompt(`${i + 1}번째 학생의 나이를 입력하세요.`);
+          const addr = prompt(`${i + 1}번째 학생의 주소를 입력하세요.`);
+
+          stu[i] = new Student(name, age, addr);
+
+          searchName[i].innerHTML = stu[i].name;
+          searchAge[i].innerHTML = stu[i].age;
+          searchAddr[i].innerHTML = stu[i].addr;
         }
         /*
         // 객체 생성
@@ -275,7 +267,7 @@
         }
         const arr = []; // 객체를 담을 배열
         // 입력
-        
+
         for (let i = 0; i < 3; i++) {
           const name = prompt(`${i + 1}번째 학생의 이름을 입력하세요.`);
           const age = prompt(`${i + 1}번째 학생의 나이를 입력하세요.`);
@@ -292,8 +284,8 @@
 
         for (let i = 0; i < 3; i++) {
           names[i].innerHTML = arr[i].name;
-          ages[i].innerHTML = arr[i].ages;
-          addrs[i].innerHTML = arr[i].addrs;
+          ages[i].innerHTML = arr[i].age;
+          addrs[i].innerHTML = arr[i].addr;
         }
           */
         /*const names = document.querySelectorAll(".name"); // 배열 0, 1, 2
@@ -306,8 +298,8 @@
           const addr = prompt(`${i + 1}번째 학생의 주소를 입력하세요.`);
 
           names[i].innerHTML = name;
-          ages[i].innerHTML = ages;
-          addrs[i].innerHTML = addrs;
+          ages[i].innerHTML = age;
+          addrs[i].innerHTML = addr;
         }*/
       }
     </script>

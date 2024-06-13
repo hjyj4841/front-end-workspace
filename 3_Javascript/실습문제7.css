@@ -1,0 +1,63 @@
+/* 헤더 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.header h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  padding-bottom: 50px;
+}
+/* 이미지 */
+.imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.imgs img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 버튼 */
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+  width: 100px;
+  height: 35px;
+  margin: 25px 10px;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.buttons #changeBtn {
+  background-color: hotpink;
+  color: darkblue;
+}
+.buttons #restartBtn {
+  background-color: darkblue;
+  color: hotpink;
+}
+/* 성공 시 나올 텍스트 */
+.succes {
+  display: flex;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  display: none;
+}
