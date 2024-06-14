@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제8</title>
+    <link rel="stylesheet" href="../2_CSS/css/reset.css" />
+    <link rel="stylesheet" href="./실습문제8.css" />
+  </head>
+  <body>
+    <form>
+      <label>
+        * 아이디 : <input type="text" id="userId" name="userId" />
+      </label>
+      <p id="userIdP">
+        첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로
+        입력하시오.
+      </p>
+
+      <label>
+        * 비밀번호 :
+        <input type="password" id="userPassword" name="userPassword" />
+      </label>
+      <p>영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.</p>
+
+      <label>
+        * 비밀번호 확인 : <input type="password" id="userPassword2" />
+      </label>
+      <p>위의 비밀번호와 일치하게 입력하시오.</p>
+
+      <label>
+        * 이름 : <input type="text" id="userName" name="userName" />
+      </label>
+      <p>한글로만 이루어져야되며 2글자 이상으로 입력하시오.</p>
+
+      <label>
+        * 이메일 : <input type="text" id="userEmail" name="userEmail" />
+      </label>
+      <p>이메일 형식에 맞춰서 입력하시오.</p>
+
+      <label>
+        * 취미 :
+        <input
+          type="text"
+          id="userHobby"
+          placeholder="축구, 농구, 야구, 독서 등"
+          name="userHobby"
+        />
+      </label>
+
+      <label>
+        * 거주지 :
+        <select name="userLocation" id="userLocation">
+          <option value="서울">서울</option>
+          <option value="경기">경기</option>
+          <option value="강원">강원</option>
+          <option value="경북">경북</option>
+          <option value="경남">경남</option>
+          <option value="전북">전북</option>
+          <option value="전남">전남</option>
+          <option value="충북">충북</option>
+          <option value="충남">충남</option>
+          <option value="제주">제주</option>
+          <option value="인천">인천</option>
+          <option value="대전">대전</option>
+          <option value="광주">광주</option>
+          <option value="대구">대구</option>
+          <option value="부산">부산</option>
+        </select>
+      </label>
+
+      <div>
+        <button type="submit" id="submitBtn">회원가입</button>
+        <button type="reset" id="resetBtn">취소</button>
+      </div>
+    </form>
+    <script src="./실습문제8-2.js"></script>
+  </body>
+</html>
