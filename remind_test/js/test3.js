@@ -1,11 +1,9 @@
 const inputs = document.querySelectorAll("input"); // input 배열
 const ps = document.querySelectorAll("form > p"); // p 배열
-let check;
-let txt;
-let arr = [];
-let change;
 
-function addText(index, reset) {
+function addText(index) {
+  let check;
+  let txt;
   switch (index) {
     case 0:
       check = /^[a-zA-Z][a-zA-Z0-9]{7,11}$/;
@@ -28,11 +26,12 @@ function addText(index, reset) {
       check = /^[!-~]+@[!-~]+$/;
       txt = "이메일 형식에 맞춰서 입력하시오.";
   }
-  return checkBoolean(check, txt, index, reset);
+  return [check, txt];
 }
 
-function checkBoolean(check, txt, index, reset) {
-  if (inputs[index].value === "" || reset === "reset") {
+function checkBoolean(check, index) {
+  let change;
+  if (inputs[index].value === "") {
     change = "normal";
   } else {
     if (check === 0) {
@@ -47,7 +46,7 @@ function checkBoolean(check, txt, index, reset) {
       change = "bad";
     }
   }
-  return changeTxt(txt, index, change);
+  return change;
 }
 
 function changeTxt(txt, index, change) {
@@ -64,16 +63,23 @@ function changeTxt(txt, index, change) {
       ps[index].innerHTML = txt;
       ps[index].style.color = "gray";
   }
+  if (index === 1 && inputs[index].value !== inputs[0].value) {
+    ps[2].innerHTML = "위의 비밀번호와 일치하게 입력하시오.";
+    ps[2].style.color = "red";
+  }
 }
 
 for (let i = 0; i < ps.length; i++) {
   inputs[i].addEventListener("input", function () {
-    addText(i);
+    const arr = addText(i);
+    const change = checkBoolean(arr[0], i);
+    changeTxt(arr[1], i, change);
   });
 }
 
 resetBtn.addEventListener("click", function () {
   for (let i = 0; i < ps.length; i++) {
-    addText(i, "reset");
+    const arr = addText(i);
+    changeTxt(arr[1], i, "normal");
   }
 });
