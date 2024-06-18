@@ -10,7 +10,7 @@
     <script>
       console.log("-----------------------1번 문제--------------------");
       for (let i = 100; i <= 200; i++) {
-        if (i % 5 != 0) {
+        if (i % 5 !== 0) {
           console.log(i);
         }
       }
@@ -21,7 +21,7 @@
       console.log("-----------------------2번 문제--------------------");
       let sum = 0;
 
-      for (let i = 0; i <= 1000; i++) {
+      for (let i = 1; i <= 1000; i++) {
         if (i % 3 === 0) {
           sum += i;
         }
@@ -34,25 +34,46 @@
       console.log("-----------------------3번 문제--------------------");
       const str = "안녕하세요. 반갑습니다!";
 
-      const strArr = str.split("");
+      // const strArr = str.split("");
 
-      strArr.forEach((value) => {
+      // strArr.forEach((value) => {
+      //   console.log(value);
+      // });
+
+      // for (let i = 0; i < str.length; i++) {
+      //   console.log(str[i]); // 문자열은 배열처럼 사용 가능
+      // }
+
+      for (const value of str) {
         console.log(value);
-      });
+      }
     </script>
 
     <!-- Q4. 배열 값 중 최대값을 출력하세요 -->
     <script>
       console.log("-----------------------4번 문제--------------------");
       const nums = [3, 7, 12, 5, 3];
-      let maxNum = 0;
 
-      for (let i = 0; i < nums.length; i++) {
-        if (maxNum <= nums[i]) {
-          maxNum = nums[i];
+      // for 문 사용
+      let maxNum = nums[0];
+      // for (let i = 0; i < nums.length; i++) {
+      //   if (maxNum <= nums[i]) {
+      //     maxNum = nums[i];
+      //   }
+      // }
+      for (let num of nums) {
+        if (maxNum < num) {
+          maxNum = num;
         }
       }
       console.log(maxNum);
+
+      // 정렬 사용
+      nums.sort((a, b) => a - b); // 정렬 [3, 3, 5 ,7, 12]
+      console.log(nums[nums.length - 1]);
+
+      // Math 함수 사용
+      console.log(Math.max(...nums)); // ... = 배열에 해당하는 값들을 전부 나열
     </script>
 
     <!-- Q5. 1 ~ 10 정수 중 소수(1과 자기자신)를 출력하세요
@@ -61,7 +82,6 @@
     <script>
       console.log("-----------------------5번 문제 --------------------");
       // let exNo = 0;
-
       // for (let i = 2; i <= 10; i++) {
       //   for (let j = 2; j <= i; j++) {
       //     if (i % j === 0) {
@@ -77,9 +97,7 @@
       for (let i = 2; i <= 10; i++) {
         for (let j = 2; j <= i; j++) {
           if (i % j === 0) {
-            if (i != j) {
-              break;
-            }
+            if (i !== j) break;
             console.log(i);
           }
         }
@@ -91,10 +109,13 @@
       console.log("-----------------------6번 문제--------------------");
       const nums2 = [1, 3, 5];
 
-      const newNums2 = nums2.map((value) => {
-        return value * 2;
-      });
+      // 반복문 사용
+      for (const num of nums2) {
+        console.log(num * 2);
+      }
 
+      // map 함수 사용
+      const newNums2 = nums2.map((value) => value * 2);
       console.log(newNums2);
     </script>
 
@@ -103,13 +124,18 @@
       console.log("-----------------------7번 문제--------------------");
       const nums3 = [90, 85, 70, 86, 97];
 
-      const sum3 = nums3.reduce((acc, value) => {
-        return acc + value;
-      });
-
+      // reduce 함수 사용
+      let sum3 = nums3.reduce((acc, value) => acc + value);
       const avg3 = sum3 / nums3.length;
-
       console.log(`합계: ${sum3}, 평균: ${avg3}`);
+
+      // 반복문 사용
+      sum3 = 0;
+      for (const num of nums3) {
+        sum3 += num;
+      }
+      console.log(sum3);
+      console.log(sum3 / nums3.length);
     </script>
 
     <!-- Q8. 두 배열의 각 데이터의 곱셈을 한 데이터들로 이루어진 새로운 배열을 생성하여 출력하세요 -->
@@ -118,9 +144,9 @@
 
       const a1 = [12, 0, 2, 5, 4];
       const b1 = [5, 15, 6, 7, 8];
-      let c1 = [];
+      const c1 = [];
 
-      for (let i = 0; i < a1.length; i++) {
+      for (let i in a1) {
         c1.push(a1[i] * b1[i]);
       }
       console.log(c1);
@@ -136,11 +162,17 @@
       const c2 = [];
 
       // a2.includes(12) == true
-      for (let i = 0; i < a2.length; i++) {
-        if (b2.includes(a2[i])) {
-          c2.push(a2[i]);
-        }
-      }
+      // for (let i = 0; i < a2.length; i++) {
+      //   if (b2.includes(a2[i])) {
+      //     c2.push(a2[i]);
+      //   }
+      // }
+
+      a2.forEach((a) => {
+        // a 값은 데이터 b2는 배열
+        // console.log(b2.includes(a), a);
+        if (b2.includes(a)) c2.push(a);
+      });
 
       console.log(c2);
     </script>
